@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Web Application</title>
+</head>
+<body>
+    <
+<div style="text-align:center">
+        <font face="宋体" size="+5">共享型知识库</font><br/>
+        <font></font><br/>
+        <font></font><br/>
+        <form action ='/search0' method='get'>
+            <input type="txt"  rows="2" cols="60" placeholder="请输入关键词...."
+            name='keyword' style="height:40px;width:500px;">
+            <button type="submit" class="search-submit"
+            style="height:38px;width:60px;">查询</button>
+        </form>
+ <a href="./index">所有文档列表</a>
+        <a href="./upload">上传新增docx</a>
+
+    </div>
+
+<ul>
+
+    {% for name in filelist %}
+    <li><a href="..\download\{{ name['_source']['title'] }}">{{ name['_source']['title'] }} </a></li>
+<div class="panel-body" style="height: 100px; overflow:scroll">
+            <div style="border: 1px  #000000; width: 90%; margin: 0 auto;">
+                <span>
+    <lii>{{ name['_source']['text'] }}</lii> 
+
+</span>
+            </div>
+        </div>
+    {% endfor %} </ul>
+</body>
+    <script>
+    keyword='hello123'
+ window.onload = function(){
+    var x = document.querySelectorAll("lii");
+    for (var i = 0; i < x.length; i++) {
+  //x[i].innerHTML="11111";
+var t=x[i].innerHTML.replace(/{{ keyword }}/g ,"<font color=red>{{ keyword }}</font>")
+x[i].innerHTML=t
+  //x[i].style.backgroundColor = "red";
+}
+
+    
+    
+}
+</script>
+</html>

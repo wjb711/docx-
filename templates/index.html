@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Web Application</title>
+</head>
+<body>
+    <div>
+         <p>
+         </p>
+    </div>
+
+<ul>
+    {% for name in filelist %}
+    <li><a href="..\download\{{ name }}/">{{ name }} </a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
